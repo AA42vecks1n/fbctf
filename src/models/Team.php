@@ -123,7 +123,7 @@ class Team extends Model implements Importable, Exportable {
         'logo' => $team->getLogo(),
         'data' => $team_data,
       );
-      array_push($all_teams_data, $one_team);
+      array_push(&$all_teams_data, $one_team);
     }
     return array('teams' => $all_teams_data);
   }
@@ -418,7 +418,7 @@ class Team extends Model implements Importable, Exportable {
 
     $team_name = trim($team_name);
 
-    if ($team_name === '') {
+    if ($team_name === '' || strlen($team_name) > 20) {
       return false;
     }
 

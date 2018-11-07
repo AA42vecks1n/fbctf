@@ -308,7 +308,7 @@ fi
         install_nodejs
 
         log "Installing all required npm node_modules"
-        sudo npm install --prefix "$CTF_PATH"
+        sudo npm install --prefix "$CTF_PATH" --unsafe-perm
         sudo npm install -g grunt
         sudo npm install -g flow-bin
 
@@ -357,7 +357,7 @@ if [[ "$MULTIPLE_SERVERS" == false || "$SERVER_TYPE" = "mysql" ]]; then
     # Configuration for MySQL
     if [[ "$MULTIPLE_SERVERS" == true ]] && [[ "$SERVER_TYPE" = "mysql" ]]; then
         # This is required in order to generate password hash (since HHVM is not being installed)
-        package php7.0-cli
+        package php7.2-cli
 
         sudo sed -e '/^bind-address/ s/^#*/#/' -i /etc/mysql/mysql.conf.d/mysqld.cnf
         sudo sed -e '/^skip-external-locking/ s/^#*/#/' -i /etc/mysql/mysql.conf.d/mysqld.cnf

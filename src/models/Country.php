@@ -109,7 +109,7 @@ class Country extends Model {
     $countries = $all_countries->toValuesArray();
 
     usort(
-      $countries,
+      &$countries,
       function($a, $b) {
         return strcmp($a->name, $b->name);
       },

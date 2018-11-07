@@ -224,7 +224,7 @@ class AdminController extends Controller {
     $select = <select name="fb--conf--language"></select>;
     foreach ($available_languages as $file_name) {
       $matches = array();
-      if (preg_match('/^lang_(.*)\.php$/', $file_name, $matches)) {
+      if (preg_match('/^lang_(.*)\.php$/', $file_name, &$matches)) {
         $lang = $matches[1];
         $lang_name =
           locale_get_display_language($lang, $current_lang).

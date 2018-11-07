@@ -236,7 +236,7 @@ class Logo extends Model implements Importable, Exportable {
         'protected' => $logo->getProtected(),
         'custom' => $logo->getCustom(),
       );
-      array_push($all_logos_data, $one_logo);
+      array_push(&$all_logos_data, $one_logo);
     }
     return array('logos' => $all_logos_data);
   }

@@ -70,7 +70,7 @@ class Category extends Model implements Importable, Exportable {
         'category' => $category->getCategory(),
         'protected' => $category->getProtected(),
       );
-      array_push($all_categories_data, $one_category);
+      array_push(&$all_categories_data, $one_category);
     }
     return array('categories' => $all_categories_data);
   }

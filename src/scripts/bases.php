@@ -29,7 +29,7 @@ while ($conf_game->getValue() === '1') {
       'id' => $base->getId(),
       'url' => \HH\Asio\join(Level::genBaseIP($base->getId())),
     );
-    array_push($bases_endpoints, $endpoint);
+    array_push(&$bases_endpoints, $endpoint);
   }
 
   // Retrieve current owners

@@ -245,7 +245,7 @@ class Level extends Model implements Importable, Exportable {
         'links' => $link_array,
         'attachments' => $attachment_array,
       );
-      array_push($all_levels_data, $one_level);
+      array_push(&$all_levels_data, $one_level);
     }
     return array('levels' => $all_levels_data);
   }
@@ -1266,7 +1266,7 @@ class Level extends Model implements Importable, Exportable {
         'response' => curl_multi_getcontent($c),
       );
       curl_multi_remove_handle($multi_handler, $c);
-      array_push($responses, $r);
+      array_push(&$responses, $r);
     }
 
     curl_multi_close($multi_handler);

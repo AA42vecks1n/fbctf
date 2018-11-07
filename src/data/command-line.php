@@ -40,7 +40,7 @@ class CommandsController extends DataController {
       $level = $levels_map->get($country->getId());
       $is_active_level = $level !== null && $level->getActive();
       if ($country->getUsed() && $is_active_level) {
-        array_push($countries_results, $country->getName());
+        array_push(&$countries_results, $country->getName());
       }
     }
 
@@ -60,16 +60,16 @@ class CommandsController extends DataController {
     $teams_results = array();
     $teams_key = "teams";
     foreach ($all_visible_teams as $team) {
-      array_push($teams_results, $team->getName());
+      array_push(&$teams_results, $team->getName());
     }
 
     // List of level categories.
     $categories_results = array();
     $categories_key = "categories";
     foreach ($all_categories as $category) {
-      array_push($categories_results, $category->getCategory());
+      array_push(&$categories_results, $category->getCategory());
     }
-    array_push($categories_results, "All");
+    array_push(&$categories_results, "All");
 
     /* HH_FIXME[1002] */
     /* HH_FIXME[2011] */
